@@ -1,0 +1,87 @@
+ID1217 Homework 2 Report
+
+
+We see that doubling the amount of processors in the code does not double the speedup.
+I believe this is because of the general overhead that is associated with creating and 
+maintaining the threads, such as waiting for multiple threads to excecute (the implicit 
+barrier right before we get the end time). 
+
+Unfortunately I wasn't able to connect to the RHEL6 OS servers and had to use the normal
+student shell instead. These Ubuntu 18 servers only have 4 cores so when I tested 8 threads
+it wasn't able to use them very well. However I still think the results are worth including
+because they show the cost of the overhead when the number of threads is greater than the 
+number of cores. 
+
+First of all we can see that for small matrices, the speedup with 4 threads is only around 2, 
+likely because of the thread overhead. But for larger martices (like size=10000) the speedup 
+for 4 threads is very nearly 4 (about 3.8) and for 8 threads the speedup is around 3.6. This 
+shows that 8 threads on 4 cores is slower than 4 threads on 4 cores, although not by much.
+
+
+Size = 1000
+Processor = 1
+
+Time (median) = 0.00811118
+Speedup: 1
+
+Processor = 2
+
+Time (median) = 0.0046
+Speedup: 1.75
+
+Processor = 4
+
+Time (median) = 0.0035
+Speedup: 2.3
+
+Processor = 8
+
+Time (median) = 0.0039
+Speedup: 2
+
+
+
+Size = 5000
+Processor = 1
+
+Time (median) = 0.489057
+Speedup: 1
+
+Processor = 2
+
+Time (median) = 0.2541
+Speedup: 1.92
+
+Processor = 4
+
+Time (median) = 0.1339
+Speedup: 3.6
+
+Processor = 8
+
+Time (median) = 0.1352
+Speedup: 3.6
+
+
+
+Size = 10000
+Processor = 1
+
+Time (median) = 2.76135
+Speedup: 1
+
+Processor = 2
+
+Time (median) = 1.412
+Speedup: 1.97
+
+Processor = 4
+
+Time (median) = 0.7243
+Speedup: 3.8
+
+Processor = 8
+
+Time (median) = 0.7639
+Speedup: 3.6
+
