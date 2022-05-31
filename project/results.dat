@@ -1,0 +1,52 @@
+program 1:
+	grid size 100 (numIters=400k):
+		28.5s
+	grid size 200 (numIters=100k):
+		28.5s
+program 2:
+	grid size 100 (numIters=400k):
+		workers 1:
+			28.5s
+		workers 2:
+			14.7s
+		workers 3:
+			10.2s
+		workers 4:
+			8.1s
+	grid size 200 (numIters=100k):
+		workers 1:
+			28.8s
+		workers 2:
+			14.5s
+		workers 3:
+			10.0s
+		workers 4:
+			8.0s
+
+
+
+program 3:
+	grid size 12 (numIters=30m):
+		32.4s
+	grid size 24 (numIters=7m):
+		28.0s
+program 4:
+	grid size 12 (numIters=30m):
+		workers 1:
+			40.1s
+		workers 2:
+			42.2s
+		workers 3:
+			41.6s
+		workers 4:
+			49.2s
+			
+	grid size 24 (numIters=7m):
+		workers 1:
+			30.5s
+		workers 2:
+			21.2s
+		workers 3:
+			18.5s
+		workers 4:
+			17.3s
